@@ -1,59 +1,111 @@
-//Ejercicio practico JS 1
-// || pipeline, operador OR
-
-const saludador = () => {
-    let saludo = prompt("ingresa un saludo");
-    saludo = saludo.toLowerCase(); //pasamos la cadena a minusculas para realizar una validacion mas optima
-    //pasamos la cadena a mayuculas con saludo.toUpperCase();
-    
-    if (saludo === "hola" || saludo === "que tal") { // 
-        alert("Gracias por saludar");
-    } else {
-        alert("que mal, saluda primero")
-    }
-    // || cualquier opcion que de true, entra al bloque de codigo
-    // && - todas las opciones tienen que ser true para poder entrar
-
-};
+//variables
+let $btnDep = document.getElementById("dep");
+let $depa = document.getElementById("depa");
+let $capital = document.getElementById("capital");
+let $info = document.getElementById("info");
 
 
-
-
-
-
-//ingresar un pueblo o ciudad y debe responder la app con el departamento
-//variable - if/else
-// 4 ciudades o pueblos - 4 departamento 
-
-/**Ingresar este boton en el HTML
- * <button onclick="ingresarCiudad()">Ingresar Ciudad/Pueblo</button>
- */
-const imprimirDepartamento = (ciu, dep) => {
-    let msg = "La ciudad de " + ciu + " pertenece al departamento de " + dep;
+//funciones
+const imprimirDepartamento = (ciu, dep, info) => {
+    let msg = "La ciudad de " + ciu + " es la capital de " + dep;
+    $depa.innerHTML += " "+ dep;
+    $capital.innerHTML += " " + ciu;
+    $info.href = info;
     alert(msg);
     console.log(msg);
 };
 
-const ingresarCiudad = () => {
-    let locacion = prompt("ingrese su ciudad pueblo").toLowerCase();
-    console.log(locacion);
-    if(locacion==="tunja" || locacion==="sogamoso" || locacion==="chiquinquira" || locacion==="chiquinquirá"){
-        //boyaca
-        imprimirDepartamento(locacion, "Boyacá");
-    } 
-    else if (locacion==="bogota" || locacion==="bogotá" || locacion==="funza" || locacion==="soacha"){
-        //cundinamarca
-        imprimirDepartamento(locacion, "Cundinamarca");
+const setDep = () => {
+    let location = prompt("ingrese un departamento").toLowerCase();
+    
+    if (location === "amazonas") {
+        imprimirDepartamento("Leticia", location, "https://es.wikipedia.org/wiki/Leticia_(Colombia)");
+    } else if (location === "antioquia") {
+        imprimirDepartamento("Medellín", location, "https://es.wikipedia.org/wiki/Medell%C3%ADn");
+    } else if (location === "arauca") {//: .
+        imprimirDepartamento("Arauca", location, "https://es.wikipedia.org/wiki/Arauca_(Arauca)");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
+    } else if (location === "") {
+        imprimirDepartamento("", location, "");
     }
-    else if(locacion==="medellin" || locacion==="medellín" || locacion==="bello" || locacion==="envigado"){
-        //antioquia
-        imprimirDepartamento(locacion, "Antioquía");
-    }
-    else if(locacion==="calí" || locacion==="cali" || locacion==="tulua" || locacion==="tuluá" || locacion==="buga"){
-        //valle del cauca
-        imprimirDepartamento(locacion, "Valle del Cauca");
-    }
-    else{
-        alert("Ha ingresado una locacion no registrada en el sistema");
-    }
+};
+
+
+/**
+
+
+Atlántico: Barranquilla.
+Bolívar: Cartagena de Indias.
+Boyacá: Tunja.
+Caldas: Manizales.
+Caquetá: Florencia.
+Casanare: Yopal.
+Cauca: Popayán.
+Cesar: Valledupar.
+Chocó: Quibdó.
+Córdoba: Montería.
+Cundinamarca: Bogotá.
+Guainía: Inírida.
+Guaviare: San José del Guaviare.
+ */
+
+
+//eventos
+$btnDep.onclick = function () {
+    setDep();
 };
